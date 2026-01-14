@@ -1,9 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Minha leitora preferida</title>
   </head>
-  <body></body>
+  <body>
+    <header class="camada-superior">
+      <h1>Para minha leitora preferida</h1>
+
+      <div class="homenagem">
+        <img src="assets/images/elanny3.jpg" alt="" />
+      </div>
+    </header>
+    <section id="poema">
+      <div class="overlay">
+        <h2 id="titulo-poema">Poema da vez</h2>
+        <h1>Beijo Molhado</h1>
+        <div id="conteudo-poema" style="white-space: pre-wrap">
+          Carregando o sentimento da semana...
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Função para carregar o arquivo
+      async function carregarPoema() {
+        try {
+          // Busca o arquivo txt (certifique-se que o nome está correto)
+          const resposta = await fetch("poema.txt");
+
+          if (!resposta.ok) {
+            throw new Error("Não foi possível carregar o poema.");
+          }
+
+          // Transforma o arquivo em texto puro
+          const texto = await resposta.text();
+
+          // Insere o texto dentro da nossa div
+          document.getElementById("conteudo-poema").innerText = texto;
+        } catch (erro) {
+          console.error("Erro:", erro);
+          document.getElementById("conteudo-poema").innerText =
+            "Ocorreu um erro ao carregar o poema. :( ";
+        }
+      }
+
+      // Executa a função assim que o site abre
+      carregarPoema();
+    </script>
+  </body>
 </html>

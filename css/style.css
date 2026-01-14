@@ -1,0 +1,149 @@
+body {
+  background-image: url("../assets/images/beijo.jpg");
+
+  /* Garante que a imagem cubra toda a área disponível */
+  background-size: cover;
+
+  /* Centraliza a imagem */
+  background-position: center;
+
+  /* Impede que a imagem se repita se o conteúdo for pequeno */
+  background-repeat: no-repeat;
+
+  /* Fixa o fundo para que ele não role com a página (opcional) */
+  background-attachment: fixed;
+
+  /* Garante que o body tenha no mínimo a altura da tela */
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Uma fonte mais limpa */
+  color: antiquewhite;
+}
+
+.camada-superior {
+  /* Define a cor de fundo com transparência (RGBA) */
+  background-color: rgba(202, 185, 185, 0); /* Preto com 50% de transparência */
+
+  /* Faz a div ocupar a tela inteira ou apenas o espaço necessário */
+  min-height: 100vh;
+  width: 100%;
+
+  /* Centraliza o conteúdo dentro da div */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white; /* Cor do texto */
+}
+
+.camada-superior h1 {
+  background-color: rgb(130, 228, 235);
+  border: 2px solid rgb(230, 230, 230);
+  border-radius: 3%;
+  color: #d796e7;
+  font-style: italic;
+  -webkit-text-stroke-color: rgba(103, 94, 226, 0.568);
+  -webkit-text-stroke-width: 1px;
+}
+
+.homenagem {
+  display: flex;
+  flex-wrap: wrap; /* Se não couber na tela, elas pulam para a linha de baixo */
+  justify-content: center; /* Centraliza as fotos horizontalmente */
+  gap: 20px; /* Espaço entre as fotos */
+  padding: 20px;
+  max-width: 1200px; /* Largura máxima da galeria */
+  margin: 0 auto;
+}
+
+/* 2. O SEGREDO: Faz a imagem caber no container */
+.homenagem img {
+  width: 250px; /* Define um tamanho fixo para ficarem iguais */
+  height: 300px; /* Opcional: define altura para parecer um porta-retrato */
+  object-fit: cover; /* Corta a imagem para preencher o tamanho sem esticar */
+
+  /* Bordas e Enfeites */
+  border: 8px solid white; /* Borda grossa branca (estilo polaroide) */
+  border-radius: 4px; /* Canto levemente arredondado */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidade */
+
+  /* Efeito de inclinação (charme extra) */
+  transition: transform 0.3s ease;
+}
+
+/* Efeito ao passar o mouse */
+.galeria-homenagem img:hover {
+  transform: scale(1.05) rotate(2deg); /* Aumenta um pouco e inclina */
+  z-index: 10;
+}
+
+#poema {
+  /* Adiciona 0 de espaço em cima/baixo e 10% nas laterais */
+  display: flex;
+  padding: 20px;
+  min-height: 80vh;
+  justify-content: center;
+  align-items: center;
+  /* Garante que o padding não aumente o tamanho total da div */
+  box-sizing: border-box;
+}
+
+#poema .overlay {
+  /* Centraliza a div horizontalmente */
+  margin: 0 auto;
+
+  /* Adiciona um padding pequeno para não encostar na borda em celulares */
+  padding: 20px;
+
+  /* Se quiser que o fundo da camada apareça apenas aqui: */
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px; /* Arredonda as bordas para ficar elegante */
+}
+
+.overlay {
+  left: 80px;
+  right: 80px;
+  background-color: rgba(
+    245,
+    245,
+    245,
+    0.8
+  ); /* Escurece um pouco a imagem para o texto aparecer */
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Bordas fininhas para brilho */
+  flex-direction: column; /* Coloca um elemento abaixo do outro */
+  align-items: center; /* Centraliza o texto e o título */
+}
+
+.overlay h1 {
+  background-color: rgb(130, 228, 235);
+  border: 2px solid rgb(230, 230, 230);
+  border-radius: 3%;
+  color: #d796e7;
+  font-style: italic;
+  -webkit-text-stroke-color: rgba(103, 94, 226, 0.568);
+  -webkit-text-stroke-width: 1px;
+}
+
+#conteudo-poema {
+  margin-top: 25px; /* Afasta o texto do título */
+  font-size: 1.2rem;
+  line-height: 1.6; /* Espaço entre as linhas do poema */
+  color: #f0f0f0; /* Branco levemente cinza para não cansar a vista */
+  font-style: italic;
+  white-space: pre-wrap; /* Mantém a formatação do seu arquivo .txt */
+}
+
+h1,
+h2 {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+  color: #ff85a1; /* Um rosa mais suave e elegante */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}

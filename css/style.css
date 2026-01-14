@@ -43,6 +43,7 @@ body {
   font-style: italic;
   -webkit-text-stroke-color: rgba(103, 94, 226, 0.568);
   -webkit-text-stroke-width: 1px;
+  text-align: center;
 }
 
 .homenagem {
